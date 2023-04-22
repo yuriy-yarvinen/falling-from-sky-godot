@@ -1,0 +1,10 @@
+res://main/main.tscn
+res://player/player.tscn
+res://player/player.gd
+res://falling_objects/falling_object.tscn
+res://falling_objects/falling_object.gd
+res://main/FallingManager.gd
+res://ui/score.tscn
+res://ui/score.gd
+res://autoload/game_events.tscn
+res://autoload/game_events.gd

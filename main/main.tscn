@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://bod2wc03rihis"]
+
+[ext_resource type="PackedScene" uid="uid://c2dq68dkfnmod" path="res://player/player.tscn" id="1_e6q1v"]
+[ext_resource type="Texture2D" uid="uid://7liv8bw2nnbc" path="res://main/tileset.png" id="2_yq2mv"]
+[ext_resource type="Script" path="res://main/falling_manager.gd" id="3_bcpao"]
+[ext_resource type="PackedScene" uid="uid://nte2k8eu6r8b" path="res://falling_objects/falling_object.tscn" id="3_h1ojh"]
+[ext_resource type="PackedScene" uid="uid://3xotshu4imn1" path="res://ui/score.tscn" id="5_7h8x1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8lmif"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8c5w"]
+texture = ExtResource("2_yq2mv")
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0/physics_layer_0/polygon_0/one_way = true
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 1
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0/physics_layer_0/polygon_0/one_way = true
+3:1/0/terrains_peering_bit/right_side = 0
+3:1/0/terrains_peering_bit/left_side = 0
+5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0/physics_layer_0/polygon_0/one_way = true
+5:1/0/terrains_peering_bit/left_side = 0
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/terrain = 1
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0/terrains_peering_bit/right_side = 1
+1:3/0/terrains_peering_bit/bottom_side = 1
+1:3/0/terrains_peering_bit/left_side = 1
+1:3/0/terrains_peering_bit/top_left_corner = 1
+1:3/0/terrains_peering_bit/top_side = 1
+1:3/0/terrains_peering_bit/top_right_corner = 1
+5:3/0 = 0
+5:3/0/terrain_set = 0
+5:3/0/terrain = 1
+5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:3/0/physics_layer_0/angular_velocity = 0.0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_b2cb0"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_8lmif")
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.286275, 0.435294, 0.113725, 1)
+terrain_set_0/terrain_1/name = "Terrain 1"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_x8c5w")
+
+[node name="Main" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_e6q1v")]
+position = Vector2(65, 525)
+scale = Vector2(3, 3)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, 597)
+tile_set = SubResource("TileSet_b2cb0")
+format = 2
+layer_0/tile_data = PackedInt32Array(131085, 196608, 1, 131084, 196608, 1, 131083, 196608, 1, 131082, 196608, 1, 131081, 196608, 1, 131080, 196608, 1, 131079, 196608, 1, 131078, 196608, 1, 131077, 196608, 1, 131076, 196608, 1, 131075, 196608, 1, 131074, 196608, 1, 131073, 196608, 1, 131072, 65536, 1, 131090, 196608, 1, 131089, 196608, 1, 131088, 196608, 1, 131087, 196608, 1, 131086, 196608, 1, 131094, 196608, 1, 131093, 196608, 1, 131092, 196608, 1, 131091, 196608, 1, 131097, 196608, 1, 131096, 196608, 1, 131095, 196608, 1, 131143, 327680, 1, 131142, 196608, 1, 131141, 196608, 1, 131140, 196608, 1, 131139, 196608, 1, 131138, 196608, 1, 131137, 196608, 1, 131136, 196608, 1, 131135, 196608, 1, 131134, 196608, 1, 131133, 196608, 1, 131132, 196608, 1, 131131, 196608, 1, 131130, 196608, 1, 131129, 196608, 1, 131128, 196608, 1, 131127, 196608, 1, 131126, 196608, 1, 131125, 196608, 1, 131124, 196608, 1, 131123, 196608, 1, 131122, 196608, 1, 131121, 196608, 1, 131120, 196608, 1, 131119, 196608, 1, 131118, 196608, 1, 131117, 196608, 1, 131116, 196608, 1, 131115, 196608, 1, 131114, 196608, 1, 131113, 196608, 1, 131112, 196608, 1, 131111, 196608, 1, 131110, 196608, 1, 131109, 196608, 1, 131108, 196608, 1, 131107, 196608, 1, 131106, 196608, 1, 131105, 196608, 1, 131104, 196608, 1, 131103, 196608, 1, 131102, 196608, 1, 131101, 196608, 1, 131100, 196608, 1, 131099, 196608, 1, 131098, 196608, 1, 196607, 65536, 3, 131071, 65536, 3, 65535, 65536, 3, -1, 65536, 3, -65537, 65536, 3, -131073, 65536, 3, -196609, 65536, 3, -262145, 65536, 3, -327681, 65536, 3, -393217, 65536, 3, -458753, 65536, 3, -524289, 65536, 3, -589825, 65536, 3, -655361, 65536, 3, -720897, 65536, 3, -786433, 65536, 3, -851969, 65536, 3, -917505, 65536, 3, -983041, 65536, 3, -1048577, 65536, 3, -1114113, 65536, 3, -1179649, 65536, 3, -1245185, 65536, 3, -1310721, 65536, 3, -1376257, 65536, 3, -1441793, 65536, 3, -1507329, 65536, 3, -1572865, 65536, 3, -1638401, 65536, 3, -1703937, 65536, 3, -1769473, 65536, 3, -1835009, 65536, 3, -1900545, 65536, 3, -1966081, 65536, 3, -2031617, 65536, 3, -2097153, 65536, 3, -2162689, 65536, 3, -2228225, 65536, 3, -2293761, 65536, 3, -2359297, 65536, 3, 131144, 65536, 3, 65608, 65536, 3, 72, 65536, 3, -65464, 65536, 3, -131000, 65536, 3, -196536, 65536, 3, -262072, 65536, 3, -327608, 65536, 3, -393144, 65536, 3, -458680, 65536, 3, -524216, 65536, 3, -589752, 65536, 3, -655288, 65536, 3, -720824, 65536, 3, -786360, 65536, 3, -851896, 65536, 3, -917432, 65536, 3, -982968, 65536, 3, -1048504, 65536, 3, -1114040, 65536, 3, -1179576, 65536, 3, -1245112, 65536, 3, -1310648, 65536, 3, -1376184, 65536, 3, -1441720, 65536, 3, -1507256, 65536, 3, -1572792, 65536, 3, -1638328, 65536, 3, -1703864, 65536, 3, -1769400, 65536, 3, -1834936, 65536, 3, -1900472, 65536, 3, -1966008, 65536, 3, -2031544, 65536, 3, -2097080, 65536, 3, -2162616, 65536, 3, -2228152, 65536, 3, -2293688, 65536, 3, -2359224, 65536, 3, -2424760, 65536, 3)
+
+[node name="FallingManager" type="Node" parent="."]
+script = ExtResource("3_bcpao")
+falling_object = ExtResource("3_h1ojh")
+
+[node name="Timer" type="Timer" parent="FallingManager"]
+one_shot = true
+autostart = true
+
+[node name="Score" parent="." instance=ExtResource("5_7h8x1")]

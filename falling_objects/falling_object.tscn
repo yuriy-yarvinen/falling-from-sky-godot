@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://nte2k8eu6r8b"]
+
+[ext_resource type="Texture2D" uid="uid://cw0jeknyjkdyi" path="res://falling_objects/cherry-1.png" id="1_1wfju"]
+[ext_resource type="Script" path="res://falling_objects/falling_object.gd" id="1_x1j6t"]
+[ext_resource type="PackedScene" uid="uid://3xotshu4imn1" path="res://ui/score.tscn" id="2_4o06c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4ujk"]
+radius = 14.3488
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_on1yg"]
+
+[node name="FallingObject" type="CharacterBody2D" groups=["falling_objects"]]
+scale = Vector2(3, 3)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_x1j6t")
+score = ExtResource("2_4o06c")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h4ujk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+texture = ExtResource("1_1wfju")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_on1yg")

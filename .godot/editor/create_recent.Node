@@ -1,0 +1,10 @@
+CollisionShape2D
+Area2D
+Label
+MarginContainer
+CanvasLayer
+Timer
+Node
+CharacterBody2D
+Sprite2D
+TileMap
